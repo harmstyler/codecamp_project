@@ -1,3 +1,15 @@
+from django.core.exceptions import ImproperlyConfigured
+import os
+
+
+def get_env_variable(SDCC_SECRET):
+    """ Get the environment variable or return exception """
+    try:
+        return os.environ[SDCC_SECRET]
+    except KeyError:
+        error_msg = "Set the %s environment variable" % SDCC_SECRET
+    raise ImproperlyConfigured(error_msg)
+
 # Django settings for codecamp_project project.
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -67,7 +79,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'c2gk4h0e9qwb@%)k35w&)8i76e^*7@abvj6yf1&$4+$!_=&a0!'
+SECRET_KEY = get_env_variable("SDCC_SECRET")
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (

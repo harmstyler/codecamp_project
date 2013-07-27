@@ -1,24 +1,23 @@
 # settings/local.py
 from .base import *
+import os
+
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.abspath(os.path.join(PROJECT_DIR, '../../'))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
-        # The following settings are not used with sqlite3:
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR + '/codecamp.db',
     }
 }
 
-INSTALLED_APPS += ( "debug_toolbar", )
+INSTALLED_APPS += ("debug_toolbar", )
 
-INTERNAL_IPS = ( "127.0.0.1", )
+INTERNAL_IPS = ("127.0.0.1", )
 
 MIDDLEWARE_CLASSES += (
     'debug_toolbar.middleware.DebugToolbarMiddleware',
