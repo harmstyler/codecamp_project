@@ -1,4 +1,4 @@
 South Dakota Codecamp Project
 =============================
 
-SouthDakotaCodeCamp.net 
+SouthDakotaCodeCamp.net
