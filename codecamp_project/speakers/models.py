@@ -3,6 +3,9 @@ from django.db import models
 from core.models import TimeStampedModel
 
 class Speaker(TimeStampedModel):
+    """
+    Speaker model docstring
+    """
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     slug = models.SlugField(unique=True)
