@@ -1,7 +1,8 @@
 from django.db import models
 
+from core.models import TimeStampedModel
 
-class Speaker(models.Model):
+class Speaker(TimeStampedModel):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     slug = models.SlugField(unique=True)
