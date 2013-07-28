@@ -123,6 +123,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'core',
     'speakers',
+    'campsessions',
     'schedule',
     'south',
 )
