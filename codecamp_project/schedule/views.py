@@ -1,14 +1,12 @@
-from django.template import RequestContext, loader
-from django.http import HttpResponse
+from django.shortcuts import render
+from django.http import Http404
+
+from campsessions.models import Session
 
 
 def index(request):
-    speaker_list = object()
-    session_list = object()
-    t = loader.get_template('schedule/index.html')
-    c = RequestContext(request, {
-        'speaker_list': speaker_list,
-        'session_list': session_list,
-        'request': request})
-    response = HttpResponse(t.render(c))
-    return response
+    try:
+        sessions = Session.objects.all().order_by('time')
+    except Session.DoesNotExist:
+        raise Http404
+    return render(request, 'schedule/index.html', {'sessions': sessions})
