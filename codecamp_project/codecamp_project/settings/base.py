@@ -1,6 +1,8 @@
 from django.core.exceptions import ImproperlyConfigured
 import os
 
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.abspath(os.path.join(PROJECT_DIR, '../../'))
 
 def get_env_variable(SDCC_SECRET):
     """ Get the environment variable or return exception """
@@ -65,6 +67,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
+    BASE_DIR + '/static/',
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -107,7 +110,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/Users/tyler/Projects/codecamp_project/codecamp_project/templates'
+    BASE_DIR + '/templates/'
 )
 
 INSTALLED_APPS = (
