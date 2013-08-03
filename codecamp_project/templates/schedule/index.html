@@ -12,13 +12,13 @@
             {% endfor %}
         </thead>
         <tbody>
-            {% for session in sessions %}
+            {% for time in times %}
             <tr>
                 <td style="vertical-align: top" valign="top">
-                    <h5>{{ session.time }}</h5>
+                    <h5>{{ time }}</h5>
                 </td>
                 {% for room in rooms %}
-                    {% show_session room session %}
+                    {% show_session room time %}
                 {% endfor %}
             </tr>
             {% endfor %}

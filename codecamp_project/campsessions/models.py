@@ -18,6 +18,19 @@ class Room(TimeStampedModel):
         return self.name
 
 
+class Time(models.Model):
+    """
+    Time model docstring
+    """
+    time = models.TimeField()
+
+    class Meta:
+        ordering = ['time']
+
+    def __unicode__(self):
+        return str(self.time)
+
+
 class Session(TimeStampedModel):
     """
     Session model docstring
@@ -25,7 +38,7 @@ class Session(TimeStampedModel):
     speakers = models.ManyToManyField(Speaker)
     title = models.CharField(max_length=60)
     abstract = models.TextField(blank=True,)
-    time = models.TimeField()
+    time = models.ForeignKey(Time, null=True)
     room = models.ForeignKey(Room, null=True)
     slug = models.SlugField(unique=True)
 

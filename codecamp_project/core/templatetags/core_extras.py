@@ -6,9 +6,9 @@ register = template.Library()
 
 
 @register.inclusion_tag('schedule/session.html')
-def show_session(room, session):
+def show_session(room, time):
     try:
-        session = Session.objects.filter(time__exact=session.time, room_id__exact=room.id).latest('modified')
+        session = Session.objects.filter(time_id__exact=time.id, room_id__exact=room.id).latest('modified')
     except Session.DoesNotExist:
         session = []
     return {'session': session}
