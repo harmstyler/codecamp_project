@@ -1,23 +1,25 @@
 {% extends "base.html" %}}
-
+{% load core_extras %}
 {% block content %}
 <article class="schedule full" id="Schedule">
     <table border="0" cellpadding="2" cellspacing="0" class=
     "table table-hover" style="width: 100%" summary="South Dakota Code Camp Schedule"
     width="100%">
+        <thead>
+            <th>Time</th>
+            {% for room in rooms %}
+            <th>{{ room }}</th>
+            {% endfor %}
+        </thead>
         <tbody>
-            <thead>
-                <th>Time</th>
-                <th>Room 1</th>
-            </thead>
             {% for session in sessions %}
             <tr>
                 <td style="vertical-align: top" valign="top">
                     <h5>{{ session.time }}</h5>
                 </td>
-                <td style="vertical-align: top" valign="top">
-                    <h6>{{ session }}</h6>
-                </td>
+                {% for room in rooms %}
+                    {% show_session room session %}
+                {% endfor %}
             </tr>
             {% endfor %}
         </tbody>
