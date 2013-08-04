@@ -4,3 +4,8 @@
 guard 'coffeescript', :input => 'static/coffee', :output => 'static/js/'
 
 guard 'sass', :input => 'static/sass', :output => 'static/css'
+
+guard 'livereload' do
+  watch(%r{templates/.+\.(html)})
+  watch(%r{static/.+\.(coffee|scss)})
+end
