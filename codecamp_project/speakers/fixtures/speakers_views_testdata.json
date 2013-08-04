@@ -1,0 +1,13 @@
+[
+{
+    "pk": 1,
+    "model": "speakers.speaker",
+    "fields": {
+        "first_name": "Tyler",
+        "last_name": "Harms",
+        "modified": "2013-07-27T23:59:00.673Z",
+        "slug": "tyler-harms",
+        "created": "2013-07-27T23:59:00.673Z"
+    }
+}
+]
