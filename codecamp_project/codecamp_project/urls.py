@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'codecamp_project.views.home', name='home'),
     # url(r'^codecamp_project/', include('codecamp_project.foo.urls')),
     url(r'^schedule/', include('schedule.urls')),
+    url(r'^speakers/', include('speakers.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
