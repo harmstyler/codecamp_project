@@ -1,3 +1,4 @@
 Django==1.5.1
 south
 django-debug-toolbar
+python-memcached
