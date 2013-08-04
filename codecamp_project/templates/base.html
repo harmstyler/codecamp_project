@@ -1,3 +1,4 @@
+{% load sitetree %}
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -11,7 +12,7 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
         <div class="container">
-            {% include "includes/primary_nav.html" %}
+            {% sitetree_menu from "sdcc" include "trunk" template "sitetree/menu_bootstrap.html" %}
             {% block content %}{% endblock %}
         </div>
 

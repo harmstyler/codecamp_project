@@ -130,6 +130,7 @@ INSTALLED_APPS = (
     'speakers',
     'campsessions',
     'schedule',
+    'sitetree',
     'south',
 )
 
@@ -161,3 +162,9 @@ LOGGING = {
         },
     }
 }
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.request',
+    'django.contrib.auth.context_processors.auth',
+    'django.contrib.messages.context_processors.messages',
+    )
