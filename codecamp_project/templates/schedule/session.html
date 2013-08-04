@@ -1,5 +1,10 @@
 {% if session %}
-<td>{{ session }}</td>
+<td>
+    <h5 class="session-title">{{ session }}</h5>
+    {% for speaker in session.speakers.all %}
+    <span class="session-speaker">{{ speaker }}</span>
+    {% endfor %}
+</td>
 {% else %}
 <td></td>
 {% endif %}
