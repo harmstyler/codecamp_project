@@ -1,12 +1,14 @@
 {% load sitetree %}
-<div class="navbar">
-    <ul class="nav navbar-nav">
-        {% for item in sitetree_items %}
-            <li {% if item.is_current %}class="active"{% endif %}>
-                <a href="{% sitetree_url for item %}">
-                    {{ item.title_resolved }}
-                </a>
-            </li>
-        {% endfor %}
-    </ul>
+<div class="navbar navbar-static-top">
+    <div class="container">
+        <ul class="nav navbar-nav">
+            {% for item in sitetree_items %}
+                <li {% if item.is_current %}class="active"{% endif %}>
+                    <a href="{% sitetree_url for item %}">
+                        {{ item.title_resolved }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 </div>

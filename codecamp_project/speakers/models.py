@@ -4,7 +4,9 @@ from core.models import TimeStampedModel
 
 class Speaker(TimeStampedModel):
     """
-    Speaker model docstring
+    Codecamp Speaker Model
+
+    Should contain speaker name, bio, etc based on the needs of the app.
     """
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
