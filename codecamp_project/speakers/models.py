@@ -10,6 +10,7 @@ class Speaker(TimeStampedModel):
     """
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
+    description = models.TextField(null=True)
     slug = models.SlugField(unique=True)
 
     class Meta:
