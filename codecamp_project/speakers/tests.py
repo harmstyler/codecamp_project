@@ -13,3 +13,7 @@ class SpeakersViewsTestCase(TestCase):
         self.assertEqual(speaker_1.first_name, 'Tyler')
         self.assertEqual(speaker_1.last_name, 'Harms')
         self.assertEqual(speaker_1.slug, 'tyler-harms')
+
+    def test_detail(self):
+      resp = self.client.get('/speakers/1/')
+      self.assertEqual(resp.status_code, 200)
