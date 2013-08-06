@@ -1,0 +1,162 @@
+[
+{
+    "pk": 1, 
+    "model": "campsessions.room", 
+    "fields": {
+        "modified": "2013-07-29T01:13:15.142Z", 
+        "name": "Room 1", 
+        "created": "2013-07-29T01:13:15.142Z"
+    }
+},
+{
+    "pk": 2, 
+    "model": "campsessions.room", 
+    "fields": {
+        "modified": "2013-07-31T02:05:02.449Z", 
+        "name": "Room 2", 
+        "created": "2013-07-31T02:05:02.449Z"
+    }
+},
+{
+    "pk": 3, 
+    "model": "campsessions.room", 
+    "fields": {
+        "modified": "2013-07-31T02:06:18.943Z", 
+        "name": "Room 3", 
+        "created": "2013-07-31T02:06:18.943Z"
+    }
+},
+{
+    "pk": 4, 
+    "model": "campsessions.room", 
+    "fields": {
+        "modified": "2013-08-03T20:28:49.613Z", 
+        "name": "Room 4", 
+        "created": "2013-08-03T20:28:49.613Z"
+    }
+},
+{
+    "pk": 1, 
+    "model": "campsessions.time", 
+    "fields": {
+        "time": "14:00:00"
+    }
+},
+{
+    "pk": 2, 
+    "model": "campsessions.time", 
+    "fields": {
+        "time": "11:00:00"
+    }
+},
+{
+    "pk": 3, 
+    "model": "campsessions.time", 
+    "fields": {
+        "time": "16:00:00"
+    }
+},
+{
+    "pk": 4, 
+    "model": "campsessions.time", 
+    "fields": {
+        "time": "09:00:00"
+    }
+},
+{
+    "pk": 1, 
+    "model": "campsessions.session", 
+    "fields": {
+        "speakers": [
+            1
+        ], 
+        "room": 1, 
+        "title": "Test Session", 
+        "abstract": "Test Abstract", 
+        "created": "2013-07-28T21:06:01.413Z", 
+        "modified": "2013-08-03T21:10:28.947Z", 
+        "time": 1, 
+        "slug": "test-session"
+    }
+},
+{
+    "pk": 2, 
+    "model": "campsessions.session", 
+    "fields": {
+        "speakers": [
+            2
+        ], 
+        "room": 2, 
+        "title": "Test Session II", 
+        "abstract": "Test Session II's Abstract", 
+        "created": "2013-07-31T02:05:13.218Z", 
+        "modified": "2013-08-03T21:10:07.987Z", 
+        "time": 4, 
+        "slug": "test-session-ii"
+    }
+},
+{
+    "pk": 3, 
+    "model": "campsessions.session", 
+    "fields": {
+        "speakers": [
+            3
+        ], 
+        "room": 3, 
+        "title": "Test Session III", 
+        "abstract": "", 
+        "created": "2013-07-31T02:06:24.872Z", 
+        "modified": "2013-08-03T21:09:41.283Z", 
+        "time": 4, 
+        "slug": "test-session-iii"
+    }
+},
+{
+    "pk": 4, 
+    "model": "campsessions.session", 
+    "fields": {
+        "speakers": [
+            2
+        ], 
+        "room": 2, 
+        "title": "Another Test Session", 
+        "abstract": "", 
+        "created": "2013-08-02T00:55:37.697Z", 
+        "modified": "2013-08-03T20:47:59.601Z", 
+        "time": 2, 
+        "slug": "another-test-session"
+    }
+},
+{
+    "pk": 5, 
+    "model": "campsessions.session", 
+    "fields": {
+        "speakers": [
+            3
+        ], 
+        "room": 2, 
+        "title": "Yet another test session", 
+        "abstract": "", 
+        "created": "2013-08-02T01:03:19.032Z", 
+        "modified": "2013-08-03T21:09:59.856Z", 
+        "time": 2, 
+        "slug": "yet-another-test-session"
+    }
+},
+{
+    "pk": 6, 
+    "model": "campsessions.session", 
+    "fields": {
+        "speakers": [
+            2
+        ], 
+        "room": 2, 
+        "title": "jackson", 
+        "abstract": "", 
+        "created": "2013-08-02T01:40:43.367Z", 
+        "modified": "2013-08-03T21:09:52.962Z", 
+        "time": 3, 
+        "slug": "jackson"
+    }
+}
+]
