@@ -2,7 +2,7 @@
 <td>
     <h5 class="session-title">{{ session }}</h5>
     {% for speaker in session.speakers.all %}
-    <span class="session-speaker">{{ speaker }}</span>
+    <span class="session-speaker"><a href="{{ speaker.get_absolute_url }}">{{ speaker }}</a></span>
     {% endfor %}
 </td>
 {% else %}

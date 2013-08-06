@@ -6,7 +6,7 @@
     {% for speaker in speakers %}
         <section class="row">
             <aside class="col-12 col-lg-8">
-                <h4>{{speaker}}</h4>
+                <h4><a href="{{ speaker.get_absolute_url }}">{{speaker}}</a></h4>
                 <p>{{speaker.description|default:"<span class='text-muted'>Coming Soon</span>"}}</p>
             </aside>
             <aside class="col-12 col-lg-4">
