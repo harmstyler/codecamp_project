@@ -3,7 +3,17 @@
 <h1 class="pagetitle">Speakers</h1>
 <article class="speakers row" id="Speakers">
     <div class="col-12 col-lg-12">
+    {% for speaker in speakers %}
+        <section class="row">
+            <aside class="col-12 col-lg-8">
+                <h4>{{speaker}}</h4>
+                <p>{{speaker.description|default:"<span class='text-muted'>Coming Soon</span>"}}</p>
+            </aside>
+            <aside class="col-12 col-lg-4">
 
+            </aside>
+        </section>
+    {% endfor %}
     </div>
 </article>
 {% endblock %}
