@@ -13,3 +13,10 @@ class CoreFuntionsTestCase(TestCase):
         time = Time()
         time.id = 1
         core_extras.show_session(room, time)
+
+    def testIndex(self):
+        """
+        tests the index view
+        """
+        resp = self.client.get('/')
+        self.assertEqual(resp.status_code, 200)
