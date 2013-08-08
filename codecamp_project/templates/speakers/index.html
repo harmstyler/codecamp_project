@@ -1,19 +1,29 @@
 {% extends "base.html" %}}
+{% load core_extras %}
 {% block content %}
 <h1 class="pagetitle">Speakers</h1>
 <article class="speakers row" id="Speakers">
     <div class="col-12 col-lg-12">
-    {% for speaker in speakers %}
         <section class="row">
-            <aside class="col-12 col-lg-8">
+    {% for speaker in speakers %}
+            <aside class="col-12 col-lg-6 col-sm-6">
+                {% if speaker.image_url %}
+                <img
+                    src="{{speaker.image_url}}"
+                    title="{{speaker}}" class="pull-left img-circle" width="145" height="145" />
+                {% elif speaker.email %}
+                    {% show_gravatar speaker.email 145 %}
+                {% else %}
+                <img
+                    src="http://placehold.it/145x145"
+                    title="{{speaker}}" class="pull-left img-circle" width="145" height="145" />
+                {% endif %}
                 <h4><a href="{{ speaker.get_absolute_url }}">{{speaker}}</a></h4>
                 <p>{{speaker.description|default:"<span class='text-muted'>Coming Soon</span>"}}</p>
             </aside>
-            <aside class="col-12 col-lg-4">
-
-            </aside>
-        </section>
+        {% cycle '' '</section><section class="row">' %}
     {% endfor %}
+        </section>
     </div>
 </article>
 {% endblock %}
