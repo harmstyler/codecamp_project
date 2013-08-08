@@ -1,3 +1,5 @@
+import urllib, hashlib
+
 from django import template
 
 from campsessions.models import Session
@@ -5,7 +7,19 @@ from campsessions.models import Session
 register = template.Library()
 
 
-@register.inclusion_tag('schedule/session.html')
+@register.inclusion_tag('templatetags/gravatar.html')
+def show_gravatar(email, size=100):
+    default = "http://www.mysite.com/media/images/no-avatar.gif"
+    url = "http://www.gravatar.com/avatar.php?"
+    url += urllib.urlencode({
+            'gravatar_id': hashlib.md5(email).hexdigest(),
+            'default': default,
+            'size': str(size)
+    })
+    return {'gravatar': {'url': url, 'size': size}}
+
+
+@register.inclusion_tag('templatetags/session.html')
 def show_session(room, time):
     try:
         session = Session.objects.filter(time_id__exact=time.id, room_id__exact=room.id).latest('modified')
