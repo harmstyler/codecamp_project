@@ -10,9 +10,10 @@ class Speaker(TimeStampedModel):
     """
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
-    description = models.TextField(null=True)
-    twitter_handle = models.CharField(max_length=200,null=True)
-    image_url = models.URLField(null=True)
+    description = models.TextField(blank=True,null=True)
+    email = models.EmailField(blank=True,null=True)
+    twitter_handle = models.CharField(max_length=200,blank=True,null=True)
+    image_url = models.URLField(blank=True,null=True)
     slug = models.SlugField(unique=True)
 
     class Meta:
